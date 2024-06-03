@@ -7,46 +7,19 @@ This repository contains a collection of projects inspired by the book "Black Ha
 
 - [Introduction](#introduction)
 - [Projects](#projects)
-  - [Bluetooth Proxy](#bluetooth-proxy)
-  - [Replacing Netcat](#replacing-netcat)
-  - [TCP Proxy](#tcp-proxy)
-  - [TCP Server](#tcp-server)
   - [TCP Client](#tcp-client)
   - [UDP Client](#udp-client)
+  - [TCP Server](#tcp-server)
+  - [TCP Proxy](#tcp-proxy)
+  - [Replacing Netcat](#replacing-netcat)  
+  - [Bluetooth Proxy](#bluetooth-proxy)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
 This repository showcases various network-related projects inspired by the book "Black Hat Python." The projects aim to deepen understanding of networking concepts, Python programming, and penetration testing techniques.
 
 ## Projects
-
-### Bluetooth Proxy
-
-**File:** `chapter_1/bluetooth_proxy.py`
-
-This project creates a proxy that forwards audio data from a mobile device to a Bluetooth speaker via a laptop. It allows audio streaming from the mobile device to the speaker, even if the speaker does not support multiple device connections.
-
-### Replacing Netcat
-
-**File:** `chapter_1/replacing_netcat.py`
-
-A Python script that mimics the functionality of the popular Netcat tool. This project demonstrates how to build a simple networking tool for reading and writing data across network connections.
-
-### TCP Proxy
-
-**File:** `chapter_1/tcp_proxy.py`
-
-A simple TCP proxy written in Python. It forwards traffic between a client and a server, allowing for traffic inspection and manipulation.
-
-### TCP Server
-
-**File:** `chapter_1/tcp_server.py`
-
-A basic TCP server implemented in Python. It listens for incoming connections and handles them, demonstrating how to create server-side network applications.
-
 ### TCP Client
 
 **File:** `chapter_1/tcp_client.py`
@@ -58,6 +31,29 @@ A basic TCP client implemented in Python. It connects to a TCP server, sends dat
 **File:** `chapter_1/udp_client.py`
 
 A simple UDP client implemented in Python. It sends data to a UDP server and receives responses, illustrating the use of the UDP protocol in network communication.
+
+### TCP Server
+
+**File:** `chapter_1/tcp_server.py`
+
+A basic TCP server implemented in Python. It listens for incoming connections and handles them, demonstrating how to create server-side network applications.
+### TCP Proxy
+
+**File:** `chapter_1/tcp_proxy.py`
+
+A simple TCP proxy written in Python. It forwards traffic between a client and a server, allowing for traffic inspection and manipulation.
+
+### Replacing Netcat
+
+**File:** `chapter_1/replacing_netcat.py`
+
+A Python script that mimics the functionality of the popular Netcat tool. This project demonstrates how to build a simple networking tool for reading and writing data across network connections.
+
+### Bluetooth Proxy
+
+**File:** `chapter_1/bluetooth_proxy.py`
+
+This project creates a proxy that forwards audio data from a mobile device to a Bluetooth speaker via a laptop. It allows audio streaming from the mobile device to the speaker, even if the speaker does not support multiple device connections.
 
 ## Usage
 
