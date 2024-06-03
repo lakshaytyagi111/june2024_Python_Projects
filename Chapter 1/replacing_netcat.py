@@ -87,16 +87,16 @@ def server_loop():
     while True:
         client_socket, addr = server.accept()
         print(f"[*] Accepted connection from: {addr[0]}:{addr[1]}")
-        # spin off a thread to handle our new client
+
         client_thread = threading.Thread(target=client_handler, args=(client_socket,))
         client_thread.start()
 
-# if we don't listen we are a client....make it so.
+# if we don't listen we are a client....
 
 
-# this is for command execution
+# for command execution
 def run_command(command):
-    # trim the newline
+
     command = command.rstrip()
 
     # run the command and get the output back
@@ -151,7 +151,7 @@ def client_handler(client_socket):
             # show a simple prompt
             client_socket.send("server: $ ".encode())
 
-            # now we receive until we see a linefeed (enter key)
+            # now we receive until we see an enter key
             cmd_buffer = b""
             while b"\n" not in cmd_buffer:
                 cmd_buffer += client_socket.recv(1024)
@@ -161,6 +161,7 @@ def client_handler(client_socket):
 
             # send back the response
             client_socket.send(response)
+
 #---------------------------------------------server side end -------------------------------------#
 
 def main():
@@ -199,10 +200,9 @@ def main():
         else:
             assert False, "Unhandled Option"
 
-    # are we going to listen or just send data from stdin?
     if not listen and len(target) and port > 0:
         # read in the buffer from the commandline
-        # this will block, so send CTRL-D if not sending input
+        # this will block, so send CTRL-D if not sending input from client to start sending command to server
         # to stdin
         buffer = sys.stdin.read()
         # send data off

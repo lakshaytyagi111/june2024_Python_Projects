@@ -1,3 +1,7 @@
+# this is the simplest proxy, it takes the input of our local ip and destination ip from where to send and recieve data
+# i might try to make additional changes in order to try making this a dynamic proxy that can later be integerated with firfox.
+# that will be done in the new file -> tcp_proxy2.py 
+
 import sys
 import socket
 import threading

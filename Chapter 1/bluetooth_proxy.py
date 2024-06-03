@@ -1,6 +1,11 @@
-#i have two devices connected to my laptop, 1 my mobile phone and 2 my bluetooth speaker, i want to play songs from mobile and listen to them on my bluetooth speaker.
-# speaker doesnot have multiple device connection feature, but i want to listen audio both from my laptop to speaker and mobile to speaker.
-# so i write a python script to proxy the bluetooth audio data from mobile to speaker via laptop.
+# This is initial commit more automation will be added soon...
+
+# problem for which i tried to create this project
+
+#i have two devices connected to my laptop, 1 my mobile phone and 2 my bluetooth speaker, 
+# i wanted to play songs from mobile and listen to them on my bluetooth speaker.
+# speaker doesnot have multiple device connection feature, but i wanted to listen audio both from my laptop to speaker and mobile to speaker.
+# so i wrote a python script to proxy the audio data from mobile to speaker via laptop.
 # i have mobile and speaker connected to my laptop, so i can read audio data from mobile and write it to speaker.
 # i don't use pyaudio, i use subprocess to read audio data from mobile and write it to speaker.
 
@@ -8,9 +13,10 @@ import subprocess
 import time
 import sys
 import shlex
-# Bluetooth device addresses of mobile and speaker
-mobile = "E4:EC:E8:D2:3A:4F"
-speaker = "3B:FC:62:6C:FD:E7"
+
+# Bluetooth device addresses of mobile and speaker (physical address)
+mobile = "00:00:00:00:00:00"
+speaker = "00:00:00:00:00:00"
 
 # Get the Bluetooth device name of mobile and speaker
 def get_device_name(device):
@@ -26,7 +32,14 @@ def get_device_name(device):
     return device_name
 
 # Get device names
+# This part is hard coded 
+# Make sure both mobile and speaker are connected to laptop
+# Use this command to get the name of mobile :
+# > pactl list sources | grep Name: 
 mobile_name = "bluez_source.E4_EC_E8_D2_3A_4F.a2dp_source"
+
+# Use this command to get the name of server :
+# > pactl list sinks | grep Name:
 speaker_name = "bluez_sink.3B_FC_62_6C_FD_E7.a2dp_sink"
 
 print(f"Mobile name: {mobile_name}")
