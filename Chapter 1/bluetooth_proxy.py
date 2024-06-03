@@ -34,11 +34,11 @@ def get_device_name(device):
 # Get device names
 # This part is hard coded 
 # Make sure both mobile and speaker are connected to laptop
-# Use this command to get the name of mobile :
+# Use this command to get the name of sources (mobile) :
 # > pactl list sources | grep Name: 
 mobile_name = "bluez_source.E4_EC_E8_D2_3A_4F.a2dp_source"
 
-# Use this command to get the name of server :
+# Use this command to get the name of sinks(speaker) :
 # > pactl list sinks | grep Name:
 speaker_name = "bluez_sink.3B_FC_62_6C_FD_E7.a2dp_sink"
 
