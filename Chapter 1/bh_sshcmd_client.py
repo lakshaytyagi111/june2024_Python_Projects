@@ -11,13 +11,24 @@ def ssh_command(ip, username, passwd, command):
     # client.load_host_keys('/home/tests/.ssh/known_hosts')
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     client.connect(ip, username=username, password=passwd)
-    print("Connected to %s" % ip)
+    print("Connected to server %s" % ip)
+
+    # now we have a connection to the remote machine
+    # open a session on the remote machine, means we can execute commands on the remote machine
     session = client.get_transport().open_session()
 
     if session.active:
-        session.exec_command(command)
+        # sending bytes-like object
+        # execute the command on the remote machine
+        
+        # converting the command to bytes-like object
+        
+        command = command.encode()
+        session.send(command)
+        # session.exec_command(command)
         print(command)
-        print(session.recv(1024))
+        print("Command sent")
+        print(session.recv(1024).decode())
     
     return
 
@@ -32,6 +43,8 @@ def main():
     
     while True:
         command = input("<Shell:#> ")
+        command.rstrip()
+        
         if command == 'exit':
             break
         else:
