@@ -28,7 +28,16 @@ def ssh_command(ip, username, passwd, command):
         # session.exec_command(command)
         print(command)
         print("Command sent")
-        print(session.recv(1024).decode())
+        # getting the response from the remote machine till no more data is available to recieve from the remote machine
+        while True:
+            # recieving the response from the remote machine
+            response = session.recv(1024)
+            # converting the response to string
+            response = response.decode()
+            print(response)
+            if not response:
+                break
+        
     
     return
 
